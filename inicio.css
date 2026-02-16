@@ -73,7 +73,7 @@ table th, table td {
 
 .button {
     background-color: #333333;
-    color: #fff;
+    color: #EF280F;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -117,3 +117,4 @@ ul {
     text-align: left; 
 
 }
+
