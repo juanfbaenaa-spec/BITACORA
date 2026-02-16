@@ -85,7 +85,7 @@ table th, table td {
 }
 
 a {
-    color: #ff9900;
+    color: #EF280F;
 }
 
 a:hover {
@@ -115,4 +115,5 @@ caption {
 ul { 
     padding-left: 20px; 
     text-align: left; 
+
 }
