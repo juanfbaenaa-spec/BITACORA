@@ -11,6 +11,11 @@ body {
     color: #e4e4e4;
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
+
+    width: 100%;
+}
+main {
+    width: 100%;
 }
 
 /* ===== HEADER Y FOOTER ===== */
@@ -177,6 +182,7 @@ img {
     border-radius: 4px;
     font-weight: bold;
 }
+
 
 
 
