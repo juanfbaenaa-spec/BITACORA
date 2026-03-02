@@ -62,8 +62,6 @@ nav ul li a:hover {
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 section, aside {
-    width: 90%;
-    max-width: 900px;
     margin: 30px auto;
     padding: 25px;
     background-color: #1f1f1f;
@@ -177,6 +175,7 @@ img {
     border-radius: 4px;
     font-weight: bold;
 }
+
 
 
 
