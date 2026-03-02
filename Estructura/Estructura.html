@@ -35,83 +35,607 @@
 <body>
 
     <header>
-        <h1>El arte de la escultura</h1>
+        <h1>Estructura de la pagina</h1>
         <p>
-            Un recorrido por las formas tridimensionales a lo largo de la historia.
+            Clase sobre las estructura
         </p>
     </header>
 
     <nav>
         <ul>
-            <li>Inicio</li>
-            <li>Materiales</li>
-            <li>Técnicas</li>
-            <li>Esculturas</li>
+            <li>Estructura</li>
         </ul>
     </nav>
 
     <section>
         <h2>¿Qué es la escultura?</h2>
-        <p>
-            La escultura es una disciplina artística que consiste en crear formas
-            tridimensionales mediante la talla, el modelado o la fundición.
+        <p>A pesar de las innovaciones introducidas por CSS y JavaScript en estos últimos años, la
+estructura creada por el código HTML sigue siendo la parte fundamental del documento. Esta
+estructura define el espacio dentro del documento donde el contenido estático y dinámico es
+posicionado y es la plataforma básica para toda aplicación. Para crear un sitio o una aplicación
+web, lo primero que debemos hacer es programar el código HTML que define la estructura de
+cada una de las páginas que lo componen.
+
+IMPORTANTE: los documentos HTML son archivos de texto que se pueden crear
+con cualquier editor de texto o los editores profesionales indicados en el
+Capítulo 1. La mayoría de estos editores ofrecen herramientas para ayudarle a
+escribir sus documentos, pero no controlan la validez del código. Si omite una
+etiqueta o se olvida de escribir una parte del código, el editor no le advierte
+sobre el error cometido. Para controlar el código de sus documentos, puede usar
+herramientas de validación en línea. La más popular para documentos HTML se
+encuentra disponible en http://validator.w3.org.
+
+Tipo de documento
+Debido a que los navegadores son capaces de procesar diferentes tipos de archivos, lo primero que
+debemos hacer en la construcción de un documento HTML es indicar su tipo. Para asegurarnos de
+que el contenido de nuestros documentos sea interpretado correctamente como código HTML,
+debemos agregar la declaración <!DOCTYPE> al comienzo del archivo. Esta declaración, similar en
+formato a las etiquetas HTML, se requiere al comienzo de cada documento para ayudar al
+navegador a decidir cómo debe generar la página web. Para documentos programados con HTML5,
+la declaración debe incluir el atributo html, según la definimos en el siguiente ejemplo.
+<!DOCTYPE html>
+
+Listado 2-1: Incluyendo la declaración <!DOCTYPE>
+Hágalo usted mismo: abra Atom o su editor favorito y cree un nuevo archivo
+llamado index.html para probar los códigos de este capítulo (también puede
+usar el archivo creado en el capítulo anterior).
+IMPORTANTE: la línea con la declaración <!DOCTYPE> debe ser la primera
+línea de su documento, sin ningún espacio o código previo. Esto activa el
+modo estándar y obliga a los navegadores a interpretar HTML5 cuando es
+posible o ignorarlo en caso contrario.
+
+20 | Página HTML
+
+Lo básico: algunos de los elementos y atributos introducidos en HTML5 no
+están disponibles en viejos navegadores como Internet Explorer. Para saber
+qué navegadores implementan estos elementos u otras funciones
+incorporadas por HTML5, visite www.caniuse.com. Este sitio web ofrece una
+lista de todos los elementos, atributos, propiedades CSS, y códigos JavaScript
+disponibles en HTML5, junto con los navegadores que los admiten.
+
+Elementos estructurales
+Como mencionamos en el Capítulo 1, los elementos HTML conforman una estructura de tipo
+árbol con el elemento <html> como su raíz. Esta estructura presenta múltiples niveles de
+organización, con algunos elementos a cargo de definir secciones generales del documento y
+otros encargados de representar secciones menores o contenido. Los siguientes son los
+elementos disponibles para definir la columna vertebral de la estructura y facilitar la
+información que el navegador necesita para mostrar la página en la pantalla.
+<html>—Este elemento delimita el código HTML. Puede incluir el atributo lang para
+definir el idioma del contenido del documento.
+<head>—Este elemento se usa para definir la información necesaria para configurar la
+página web, como el título, el tipo de codificación de caracteres y los archivos externos
+requeridos por el documento.
+<body>—Este elemento delimita el contenido del documento (la parte visible de la
+página).
+Después de declarar el tipo de documento, tenemos que construir la estructura de tipo
+árbol con los elementos HTML, comenzando por el elemento <html>. Este elemento puede
+incluir el atributo lang para declarar el idioma en el que vamos a escribir el contenido de la
+página, tal como muestra el siguiente ejemplo.
+
+<!DOCTYPE html>
+<html lang="es">
+</html>
+
+Listado 2-2: Incluyendo el elemento <html>
+Lo básico: existen varios valores disponibles para el atributo lang, incluidos
+en para inglés, es para español, fr para francés, entre otros. Para obtener
+una lista completa, visite https://en.wikipedia.org/wiki/List_of_ISO_639-
+1_codes.
+
+El código HTML insertado entre las etiquetas <html> se tiene que dividir en dos secciones
+principales: la cabecera y el cuerpo. Por supuesto, la cabecera va primero y, al igual que el
+resto de los elementos estructurales, está compuesta por etiquetas de apertura y cierre.
+
+HTML 21 | Página
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+</head>
+</html>
+
+Listado 2-3: Incluyendo el elemento <head>
+
+Entre las etiquetas <head> debemos definir el título de la página web, declarar el tipo de
+codificación de caracteres, facilitar información general acerca del documento, e incorporar los
+archivos externos con estilos y códigos necesarios para generar la página. Excepto por el título e
+iconos, el resto de la información insertada en medio de estas etiquetas no es visible para el usuario.
+La otra sección que forma parte de la organización principal de un documento HTML es el
+cuerpo, la parte visible del documento que se especifica con el elemento <body>.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+</head>
+<body>
+</body>
+</html>
+
+Listado 2-4: Incluyendo el elemento <body>
+Lo básico: como ya mencionamos, la estructura HTML puede describirse
+como un árbol, con el elemento <html> como su raíz, pero otra forma de
+definir la relación entre los elementos es describirlos como padres, hijos o
+hermanos, de acuerdo a sus posiciones en la estructura. Por ejemplo, en un
+documento HTML típico, el elemento <body> es hijo del elemento <html> y
+hermano del elemento <head>. Ambos, <body> y <head>, tienen al
+elemento <html> como su padre.
+
+La estructura básica ya está lista. Ahora tenemos que construir la página, comenzando por
+la definición de la cabecera. La cabecera incluye toda la información y los recursos necesarios
+para generar la página. Los siguientes son los elementos disponibles para este propósito.
+<title>—Este elemento define el título de la página.
+<base>—Este elemento define la URL usada por el navegador para establecer la
+ubicación real de las URL relativas. El elemento debe incluir el atributo href para declarar
+la URL base. Cuando se declara este elemento, en lugar de la URL actual, el navegador usa
+la URL asignada al atributo href para completar las URL relativas.
+<meta>—Este elemento representa metadatos asociados con el documento, como la
+descripción del documento, palabras claves, el tipo de codificación de caracteres, etc. El
+elemento puede incluir los atributos name para describir el tipo de metadata, content
+
+22 | Página HTML
+para especificar el valor, y charset para declarar el tipo de codificación de caracteres a
+utilizar para procesar el contenido.
+<link>—Este elemento especifica la relación entre el documento y un recurso externo
+(generalmente usado para cargar archivos CSS). El elemento puede incluir los atributos
+href para declarar la ubicación del recurso, rel para definir el tipo de relación, media
+para especificar el medio al que el recurso está asociado (pantalla, impresora, etc.), y type
+y sizes para declarar el tipo de recurso y su tamaño (usado a menudo para cargar iconos).
+<style></style>Este elemento se usa para declarar estilos CSS dentro del documento (estudiado
+en el Capítulo 3).
+<script></script>Este elemento se usa para cargar o declarar código JavaScript (estudiado en el
+Capítulo 6).
+Lo primero que tenemos que hacer cuando declaramos la cabecera del documento es
+especificar el título de la página con el elemento <title>. Este texto es el que muestran los
+navegadores en la parte superior de la ventana, y es lo que los usuarios ven cuando buscan
+información en nuestro sitio web por medio de motores de búsqueda como Google o Yahoo.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+</head>
+<body>
+</body>
+</html>
+
+Listado 2-5: Incluyendo el elemento <title>
+Hágalo usted mismo: reemplace el código en su archivo index.html por el
+código del Listado 2-5 y abra el documento en su navegador (para abrirlo,
+puede hacer doble clic en el archivo o seleccionar la opción Abrir Archivo
+desde el menú Archivos en su navegador). Debería ver el texto especificado
+entre las etiquetas <title> en la parte superior de la ventana.
+Lo básico: el elemento <title> en el ejemplo del Listado 2-5 se ha desplazado
+hacia la derecha. El espacio en blanco en el lado izquierdo se usa para ayudar al
+desarrollador a visualizar la posición del elemento dentro de la jerarquía del
+documento Este espacio se genera automáticamente por editores como Atom,
+pero puede hacerlo usted mismo cuando lo necesite pulsando la tecla Tab
+(Tabulador) en su teclado (los navegadores ignoran los espacios en blanco y los
+saltos de líneas que se encuentran fuera de los elementos).
+
+Además del título, también tenemos que declarar los metadatos del documento. Los
+metadatos incluyen información acerca de la página que los navegadores, y también los
+motores de búsqueda, utilizan para generar y clasificar la página web. Los valores se declaran
+con el elemento <meta>. Este elemento incluye varios atributos, pero cuáles usemos
+
+HTML 23 | Página
+dependerá del tipo de información que queremos declarar. Por ejemplo, el valor más
+importante es el que define la tabla de caracteres a utilizar para presentar el texto en pantalla,
+el cual se declara con el atributo charset.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+</head>
+<body>
+</body>
+</html>
+
+Listado 2-6: Incluyendo el elemento <meta>
+Lo básico: el ejemplo del Listado 2-6 define el grupo de caracteres como utf-8,
+que es el que se recomienda debido a que incluye todos los caracteres utilizados
+en la mayoría de los idiomas, pero existen otros disponibles. Para más
+información, visite nuestro sitio web y siga los enlaces de este capítulo.
+
+Se pueden incluir múltiples elementos <meta> para declarar información adicional. Por
+ejemplo, dos datos que los navegadores pueden considerar a la hora de procesar nuestros
+documentos son la descripción de la página y las palabras claves que identifican su contenido.
+Estos elementos <meta> requieren el atributo name con los valores "description" y
+"keywords", y el atributo content con el texto que queremos asignar como descripción y
+palabras clave (las palabras clave se deben separar por comas).
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+</head>
+<body>
+</body>
+</html>
+Listado 2-7: Agregando información adicional con el elemento <meta>
+Otro elemento importante de la cabecera del documento es <link>. Este elemento se usa
+para incorporar al documento estilos, códigos, imágenes o iconos desde archivos externos. Por
+ejemplo, algunos navegadores muestran un icono en la parte superior de la ventana junto con
+el título de la página. Para cargar este icono, tenemos que incluir un elemento <link> con el
+atributo rel definido como icon, el atributo href con la ubicación del archivo que contiene
+
+24 | Página HTML
+el icono, el atributo type para especificar el formato con el que se ha creado el icono, y el
+atributo sizes con el ancho y la altura del icono separados por la letra x.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="icon" href="imagenes/favicon.png" type="image/png"
+sizes="16x16">
+</head>
+<body>
+</body>
+</html>
+
+Listado 2-8: Incluyendo el icono del documento
+
+El navegador tiene poco espacio para mostrar el icono, por lo tanto el tamaño típico de
+esta imagen es de unos 16 píxeles por 16 píxeles. La Figura 2-1 muestra cómo se ve la ventana
+cuando abrimos un documento que contiene un icono (en este caso, se muestra una imagen
+con la letra M en el lado izquierdo del título).
+
+Figura 2-1: El icono del documento en el navegador
+Hágalo usted mismo: actualice el código en su archivo index.html con el
+ejemplo del Listado 2-8. El icono se carga desde el archivo favicon.png que
+debe copiar dentro del directorio de su proyecto. Puede descargar este
+archivo desde nuestro sitio web o usar el suyo.
+Lo básico: el valor asignado al atributo type del elemento <link> debe ser
+especificado como un tipo MIME. Todo archivo tiene un tipo MIME asociado
+para indicar al sistema el formato de su contenido. Por ejemplo, el tipo
+MIME de un archivo HTML es text/html. Existe un tipo MIME para cada
+tipo de archivo disponible, que incluye image/jpeg e image/png para
+imágenes JPEG y PNG. Para obtener una lista completa, visite nuestro sitio
+web y siga los enlaces de este capítulo.
+
+HTML 25 | Página
+El elemento <link> se usa comúnmente para cargar archivos CSS con los estilos
+necesarios para generar la página web. Por ejemplo, el siguiente documento carga el archivo
+misestilos.css. Después de cargar el archivo, todos los estilos declarados en su interior se
+aplican a los elementos del documento. En este caso, solo necesitamos incluir el atributo rel
+para declarar el tipo de recurso (para hojas de estilo CSS debemos asignar el valor
+"stylesheet") y el atributo href con la URL que determina la ubicación del archivo
+(estudiaremos cómo crear esta clase de archivos y definir estilos CSS en el Capítulo 3).
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+</body>
+</html>
+
+Listado 2-9: Cargando un archivo CSS con el elemento <link>
+
+Con la cabecera lista, es hora de construir el cuerpo. Esta estructura (el código entre las
+etiquetas <body>) es la encargada de generar la parte visible de nuestro documento (la
+página web).
+HTML siempre ha ofrecido diferentes maneras de construir y organizar la información en el
+cuerpo del documento. Uno de los primeros elementos utilizados con este propósito fue
+<table> (tabla). Este elemento permitía a los desarrolladores organizar datos, textos,
+imágenes, así como herramientas en filas y columnas de celdas. Con la introducción de CSS, la
+estructura generada por estas tablas ya no resultaba práctica, por lo que los desarrolladores
+comenzaron a implementar un elemento más flexible llamado <div> (división). Pero <div>,
+así como <table>, no facilita demasiada información acerca de las partes del cuerpo que
+representa. Cualquier cosa, desde imágenes hasta menús, texto, enlaces, códigos o
+formularios, se puede insertar entre las etiquetas de apertura y cierre de un elemento <div>.
+En otras palabras, el nombre div solo especifica una división en el cuerpo, como una celda en
+una tabla, pero no ofrece ninguna pista acerca del tipo de división que está creando, cuál es su
+propósito o qué contiene. Esta es la razón por la que HTML5 introdujo nuevos elementos con
+nombres más descriptivos que permiten a los desarrolladores identificar cada parte del
+documento. Estos elementos no solo ayudan a los desarrolladores a crear el documento, sino
+que además informan al navegador sobre el propósito de cada sección. La siguiente lista
+incluye todos los elementos disponibles para definir la estructura del cuerpo.
+<div>—Este elemento define una división genérica. Se usa cuando no se puede aplicar
+ningún otro elemento.
+<main>—Este elemento define una división que contiene el contenido principal del
+documento (el contenido que representa el tema central de la página).
+
+26 | Página HTML
+<nav>—Este elemento define una división que contiene ayuda para la navegación, como el
+menú principal de la página o bloques de enlaces necesarios para navegar en el sitio web.
+<section>—Este elemento define una sección genérica. Se usa frecuentemente para separar
+contenido temático, o para generar columnas o bloques que ayudan a organizar el contenido
+principal.
+<aside>—Este elemento define una división que contiene información relacionada con el
+contenido principal pero que no es parte del mismo, como referencias a artículos o enlaces
+que apuntan a publicaciones anteriores.
+<article>—Este elemento representa un artículo independiente, como un mensaje de
+foro, el artículo de una revista, una entrada de un blog, un comentario, etc.
+<header>—Este elemento define la cabecera del cuerpo o de secciones dentro del cuerpo.
+<footer>—Este elemento define el pie del cuerpo o de secciones dentro del cuerpo.
+Estos elementos han sido definidos con el propósito de representar secciones específicas
+de una página web. Aunque son flexibles y se pueden implementar en diferentes partes del
+diseño, todos siguen un patrón que se encuentra comúnmente en la mayoría de los sitios web.
+La Figura 2-2, a continuación, ilustra este tipo de diseño.
+
+Figura 2-2: Representación visual de un diseño web tradicional
+
+A pesar de que cada desarrollador crea sus propios diseños, en general podremos describir
+todo sitio web considerando estas secciones. En la barra superior, descrita como cabecera en la
+Figura 2-2, ubicamos el logo, el nombre del sitio, los subtítulos y una descripción breve de nuestro
+sitio o página web. En la barra de navegación situada debajo es donde la mayoría de los
+desarrolladores ofrecen un menú o una lista de enlaces para navegar en el sitio. El contenido
+relevante de la página se ubica en el medio del diseño, donde generalmente encontramos artículos
+o noticias, y también enlaces a documentos relacionados o recursos. En el ejemplo de la Figura 2-2,
+esta sección se ha dividido en dos columnas, información principal y barra lateral, pero los
+diseñadores la adaptan a sus necesidades insertando columnas adicionales o dividiendo las
+columnas en bloques más pequeños. En la parte inferior de un diseño tradicional, nos encontramos
+con otra barra llamada barra institucional. La llamamos de este modo porque en este área es
+
+HTML 27 | Página
+donde mostramos información general acerca del sitio web, el autor, la compañía, los enlaces
+relacionados con reglas de uso, términos y condiciones, el mapa del sitio, etc.
+Como mencionamos anteriormente, los elementos de HTML5 se han diseñado siguiendo
+este patrón. En la Figura 2-3 aplicamos los elementos introducidos anteriormente para definir
+el diseño de la Figura 2-2.
+
+Figura 2-3: Representación de la estructura de un documento usando elementos de HTML5
+Los elementos se declaran en el documento en el mismo orden en el que se presentarán en
+pantalla, desde la parte superior a la inferior y de izquierda a derecha (este orden se puede
+modificar por medio de estilos CSS, como veremos en el Capítulo 4). El primer elemento de un
+diseño tradicional es <header>. No debemos confundir este elemento con el elemento <head>
+utilizado anteriormente para crear la cabecera del documento. Al igual que <head>, el elemento
+<header> se ha definido para facilitar información introductoria, como títulos o subtítulos, pero
+no para el documento, sino para el cuerpo o secciones dentro del cuerpo del documento. En el
+siguiente ejemplo, este elemento se usa para definir el título de la página web.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+<header>
+Este es el título
+</header>
+</body>
+</html>
+
+Listado 2-10: Incluyendo el elemento <header>
+
+28 | Página HTML
+La inserción del elemento <header> representa el comienzo del cuerpo y de la parte
+visible del documento. De ahora en adelante, podremos ver el resultado de la ejecución del
+código en la ventana del navegador.
+
+Hágalo usted mismo: reemplace el código en su archivo index.html por el
+código del Listado 2-10 y abra el documento en su navegador. Debería ver el
+título de la página en la pantalla.
+
+La siguiente sección de nuestro ejemplo es la barra de navegación. Esta barra define una
+sección con ayuda para la navegación y se representa con el elemento <nav>.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+<header>
+Este es el título
+</header>
+<nav>
+Principal | Fotos | Videos | Contacto
+</nav>
+</body>
+</html>
+
+Listado 2-11: Incluyendo el elemento <nav>
+
+La estructura y el orden que decidimos implementar depende de lo que nuestro sitio web o
+aplicación requieran. Los elementos HTML son bastante flexibles y solo nos dan ciertos parámetros
+con los que trabajar, pero el modo en que los usemos depende de nosotros. Un ejemplo de esta
+versatilidad es que el elemento <nav> se podría insertar dentro de etiquetas <header> o en otra
+sección del cuerpo. Sin embargo, siempre debemos considerar que estos elementos se han creado
+para ofrecer información adicional al navegador, y ayudar a cada nuevo programa y dispositivo a
+identificar las partes relevantes del documento. Si queremos mantener nuestro código HTML
+portable y legible, es mejor seguir los estándares establecidos por estos elementos. El elemento
+<nav> se ha creado con la intención de contener ayuda para la navegación, como el menú principal
+o bloques de enlaces importantes, y deberíamos usarlo con este propósito.
+Otro ejemplo de especificidad es el que ofrecen los elementos <main>, <section>, y
+<aside>, que se han diseñado para organizar el contenido principal del documento. En
+nuestro diseño, estos elementos representan las secciones que llamamos Información
+principal y Barra lateral. Debido a que la sección Información principal abarca más, su
+contenido generalmente se representa por elementos <section> (uno o varios, dependiendo
+del diseño), y debido al tipo de información que contiene, el elemento <aside> se ubica en
+los laterales de la página. La mayoría del tiempo, estos dos elementos son suficientes para
+
+HTML 29 | Página
+representar el contenido principal, pero como se pueden usar en otras áreas del documento,
+se implementa el elemento <main> para agruparlos, como lo muestra el siguiente ejemplo.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+<header>
+Este es el título
+</header>
+<nav>
+Principal | Fotos | Videos | Contacto
+</nav>
+<main>
+<section>
+Artículos
+</section>
+<aside>
+Cita del artículo uno
+Cita del artículo dos
+</aside>
+</main>
+</body>
+</html>
+
+Listado 2-12: Organizando el contenido principal
+
+El elemento <aside> describe la información que contiene, no un lugar en la estructura,
+por lo que se podría ubicar en cualquier parte del diseño, y se puede usar mientras su
+contenido no se considere el contenido principal del documento.
+
+IMPORTANTE: los elementos que representan cada sección del documento
+se listan en el código uno encima del otro, pero en la página web algunas
+de estas secciones se muestran una al lado de la otra (por ejemplo, las
+columnas creadas por las secciones Información principal y Barra
+lateral se muestran en una misma línea en la página web). Si abre el
+documento del Listado 2-12 en su navegador, verá que los textos se
+muestran uno por línea. Esto se debe a que HTML5 delega la tarea de
+presentar el documento a CSS. Para mostrar las secciones en el lugar
+correcto, debemos asignar estilos CSS a cada elemento del documento.
+Estudiaremos CSS en los Capítulos 3 y 4.
+
+El diseño considerado anteriormente (Figura 2-2) es el más común de todos y representa la
+estructura básica de la mayoría de los sitios web que encontramos hoy en día, pero es también
+una muestra de cómo se muestra el contenido importante de una página web en pantalla.
+
+30 | Página HTML
+Como los artículos de un diario, las páginas web generalmente presentan la información
+dividida en secciones que comparten características similares. El elemento <article> nos
+permite identificar cada una de estas partes. En el siguiente ejemplo, implementamos este
+elemento para representar las publicaciones que queremos mostrar en la sección principal de
+nuestra página web.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+<header>
+Este es el título
+</header>
+<nav>
+Principal | Fotos | Videos | Contacto
+</nav>
+<main>
+<section>
+<article>
+Este es el texto de mi primer artículo
+</article>
+<article>
+Este es el texto de mi segundo artículo
+</article>
+</section>
+<aside>
+Cita del artículo uno
+Cita del artículo dos
+</aside>
+</main>
+</body>
+</html>
+
+Listado 2-13: Incluyendo el elemento <article>
+
+En este punto, ya contamos con la cabecera y el cuerpo del documento, secciones con
+ayuda para la navegación y el contenido, e información adicional a un lado de la página. Lo
+único que nos queda por hacer es cerrar el diseño y finalizar el cuerpo del documento. Con
+este fin, HTML ofrece el elemento <footer>.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Este texto es el título del documento</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+
+HTML 31 | Página
+
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="misestilos.css">
+</head>
+<body>
+<header>
+Este es el título
+</header>
+<nav>
+Principal | Fotos | Videos | Contacto
+</nav>
+<main>
+<section>
+<article>
+Este es el texto de mi primer artículo
+</article>
+<article>
+Este es el texto de mi segundo artículo
+</article>
+</section>
+<aside>
+Cita del artículo uno
+Cita del artículo dos
+</aside>
+</main>
+<footer>
+&copy; Derechos Reservados 2016
+</footer>
+</body>
+</html>
+
+Listado 2-14: Incluyendo el elemento <footer>
+
+En un diseño web tradicional (Figura 2-2), la sección Barra institucional se define con el
+elemento <footer>. Esto se debe a que la sección representa el final (o pie) de nuestro
+documento y se usa comúnmente para compartir información general acerca del autor del
+sitio o la compañía detrás del proyecto, como derechos de autor, términos y condiciones, etc.
+El elemento <footer> se usa para representar el final del documento y tiene el objetivo
+principal ya mencionado, sin embargo, este elemento y el elemento <header> también se
+pueden utilizar dentro del cuerpo para representar el comienzo y final de una sección.
+Lo básico: el ejemplo del Listado 2-14 incluye la cadena de caracteres
+&copy; al pie del documento. Sin embargo, cuando se carga el documento,
+el navegador reemplaza estos caracteres por el carácter de derechos de
+autor (©). Estas cadenas de caracteres se denominan entidades (character
+entities) y representan caracteres especiales que no se encuentran en el
+teclado o tienen un significado especial en HTML, como el carácter de
+derechos de autor (©), el de marca registrada (®) o los paréntesis angulares
+usados por HTML para definir los elementos (< y >). Cuando necesite incluir
+en sus textos uno de estos caracteres, debe escribir la entidad en su lugar.
+Por ejemplo, si quiere incluir los caracteres < y > dentro de un texto, debe
+representarlos con las cadenas de caracteres &lt; y &gt;. Otras entidades
+de uso común son &amp; (&), &quot; ("), &apos; ('), &pound; (£), y
+
+32 | Página HTML
+
+&euro; (€). Para obtener una lista completa, visite nuestro sitio web y siga
+los enlaces de este capítulo.
         </p>
-    </section>
+</section>
 
     <section>
-        <h2>Materiales escultóricos</h2>
-        <ul>
-            <li>Mármol</li>
-            <li>Bronce</li>
-            <li>Madera</li>
-            <li>Piedra</li>
-            <li>Arcilla</li>
-        </ul>
+        <h2>Pagina Ejercicio</h2>
+        <button><a href="Estructura_ejercicio.html">Ver ejercicio</a></button>
     </section>
-
-    <section>
-        <h2>Técnicas escultóricas</h2>
-        <ol>
-            <li>Talla</li>
-            <li>Modelado</li>
-            <li>Fundición</li>
-            <li>Ensamblaje</li>
-        </ol>
-    </section>
-
-    <aside>
-        <h3>Dato artístico</h3>
-        <p>
-            Miguel Ángel consideraba que la escultura ya existía dentro del mármol,
-            y que el escultor solo debía liberar la forma.
-        </p>
-    </aside>
-
-    <section>
-        <h2>Esculturas famosas</h2>
-
-        <h3>El David</h3>
-        <p>
-            Escultura renacentista de Miguel Ángel que representa el ideal
-            del cuerpo humano.
-        </p>
-
-        <h3>Venus de Milo</h3>
-        <p>
-            Obra griega clásica famosa por su equilibrio y elegancia.
-        </p>
-
-        <h3>El Pensador</h3>
-        <p>
-            Escultura de Rodin que simboliza la reflexión profunda del ser humano.
-        </p>
-    </section>
-
     <footer>
         <p>
-            Página educativa sobre escultura • Hecha con HTML
+            Página educativa hecha con HTML
         </p>
     </footer>
 
 </body>
+
 </html>
